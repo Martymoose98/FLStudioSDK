@@ -123,7 +123,7 @@ public:
     int GetStep_Freq(int Freq);
     void ProcessAllParams();
     void SkipRendering(void *SourceBuffer, void *DestBuffer, int Length);
-    TCPPFruityPlug(intptr_t SetHostTag, TFruityPlugHost *SetPlugHost, HINSTANCE instance);
+    TCPPFruityPlug(TPluginTag SetHostTag, TFruityPlugHost *SetPlugHost, HINSTANCE Instance);
 	bool AllocTempBuffer(int Length, int NumBuffers);
 
 

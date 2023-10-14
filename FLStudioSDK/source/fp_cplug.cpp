@@ -117,13 +117,13 @@ void TAudioRenderer::SetSmpRate(int newValue)
 // --- TCPPFruityPlug ---
 
 // create the object
-TCPPFruityPlug::TCPPFruityPlug(intptr_t SetHostTag, TFruityPlugHost *SetPlugHost, HINSTANCE instance)
+TCPPFruityPlug::TCPPFruityPlug(TPluginTag SetHostTag, TFruityPlugHost *SetPlugHost, HINSTANCE Instance)
     : TFruityPlug()
 {
     HostTag = SetHostTag;
     PlugHost = SetPlugHost;
 
-	HInstance = instance;	// call before GetPluginPath()!
+	HInstance = Instance;	// call before GetPluginPath()!
 
     GetPluginPath();
 
@@ -140,7 +140,7 @@ TCPPFruityPlug::TCPPFruityPlug(intptr_t SetHostTag, TFruityPlugHost *SetPlugHost
     #endif
 
 #ifndef __APPLE__
-	char *path = (char *)(PlugHost->Dispatcher(HostTag,FHD_GetPath, GP_ProgPath, 0));
+	char *path = (char *)(PlugHost->Dispatcher(HostTag, FHD_GetPath, GP_ProgPath, 0));
 	strcpy_s(ProgPath, MAX_PATH, path);
 #endif
 }
@@ -171,9 +171,9 @@ bool TCPPFruityPlug::AllocTempBuffer(int Length, int NumBuffers)
 		return false;
 }
 
-void TCPPFruityPlug::SetInstanceHandle(HINSTANCE instance)
+void TCPPFruityPlug::SetInstanceHandle(HINSTANCE Instance)
 {
-	HInstance = instance;
+	HInstance = Instance;
 }
 
 

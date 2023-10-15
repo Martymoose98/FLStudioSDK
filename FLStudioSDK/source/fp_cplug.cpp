@@ -161,7 +161,7 @@ void _stdcall TCPPFruityPlug::DestroyObject()
 // returns true if freshly reallocated
 bool TCPPFruityPlug::AllocTempBuffer(int Length, int NumBuffers)
 {
-	if (Length>MaxProcessLength)
+	if (Length > MaxProcessLength)
 	{
 		MaxProcessLength = AlignBlock_4(Length);
 		ProcessTempBuffer = (PWAV32FM)realloc(ProcessTempBuffer, MaxProcessLength*8*NumBuffers);
@@ -455,7 +455,7 @@ void _stdcall TCPPFruityPlug::Gen_Render(PWAV32FS DestBuffer, int &Length)
 {
 }
 
-void _stdcall TCPPFruityPlug::GetName(int Section, int Index, int Value, char *Name)
+void _stdcall TCPPFruityPlug::GetName(int Section, int Index, intptr_t Value, char *Name)
 {
 }
 

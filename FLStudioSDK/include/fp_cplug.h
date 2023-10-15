@@ -85,7 +85,7 @@ public:
     virtual void _stdcall SaveRestoreState(IStream *Stream, BOOL Save);
 
     // names (see FPN_Param) (Name must be at least 256 chars long)
-    virtual void _stdcall GetName(int Section, int Index, int Value, char *Name);
+    virtual void _stdcall GetName(int Section, int Index, intptr_t Value, char *Name);
 
     // events
     virtual int _stdcall ProcessEvent(int EventID, int EventValue, int Flags);
